@@ -27,10 +27,10 @@ class Peminjaman extends Model
         ];
     }
     
-    public function user(): BelongsTo 
-    {
-        return $this->belongsTo(User::class);
-    }
+    public function user(): BelongsTo
+{
+    return $this->belongsTo(User::class)->withTrashed();
+}
 
     // Diubah menjadi jamak (detailPinjams) agar cocok dengan Controller Anda
     public function detailPinjams(): HasMany 
